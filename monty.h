@@ -34,12 +34,12 @@ typedef struct stack_s
 typedef struct instruction_s
 {
         char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+        void (*f)(monty_stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-char *copy_and_cut(char *line);
-int (*get_ops(char *token))(monty_stack_t **stack, unsigned int number);
-int push (monty_stack_t **stack, unsigned int number);
-int pall(monty_stack_t *stack);
+void copy_and_cut(char *line, int line_nb);
+void (*get_ops(char *token))(monty_stack_t **stack, unsigned int number);
+void push (monty_stack_t **stack, unsigned int number);
+void pall(monty_stack_t **stack, unsigned int number);
 
 #endif
