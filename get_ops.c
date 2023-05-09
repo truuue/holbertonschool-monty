@@ -7,7 +7,7 @@ void (*get_ops(char *token))(monty_stack_t **, unsigned int)
 	    {"push", push},
 	    {"pall", pall},
 	    {NULL, NULL}};
-	
+
 	while (opcode_func[i].opcode != NULL)
 	{
 		if (strcmp(opcode_func[i].opcode, token) == 0)
