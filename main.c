@@ -3,8 +3,9 @@
 int main(int argc, char** argv)
 {
 	int fd;
+	int line_nb = 0;
 	char *line = NULL;
-    	size_t size = 0;
+	size_t size = 0;
     	ssize_t nread;
 	FILE *file = NULL;
 
@@ -24,9 +25,10 @@ int main(int argc, char** argv)
 	file = fdopen(fd, "r");
 	while ((nread = getline(&line, &size, file)) != -1)
 	{
-		//fonction dans un autre fichier .c --> char *temp = strdup(line), strtok(temp, " "), strcmp
-		copy_and_cut(line);
+		line_nb++;
+		copy_and_cut(line, line_nb);
 	}
+		
 	free(line);
 	close(fd);
 	return (0);
