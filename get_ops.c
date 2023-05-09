@@ -1,7 +1,8 @@
 #include "monty.h"
 
-void get_ops()
+int (*get_ops(char *token))(monty_stack_t **, unsigned int)
 {
+	printf("token get_ops = [%s]\n", token);
 instruction_t opcode_func[] = {
 		{"push", push},
 		{"pall", pall},
@@ -9,13 +10,13 @@ instruction_t opcode_func[] = {
 	};
     int i = 0;
 
-	while (i < 3)
-	{
-		if (*opcode_func[i].opcode == *s)
+		while (opcode_func[i].opcode != NULL)
 		{
-			return (*opcode_func[i].f);
+			if (strcmp(opcode_func[i].opcode, token) == 0)
+			{
+				return (opcode_func[i].f);
+			}
+			i++;
 		}
-		i++;
-	}
 	return (NULL);
 }

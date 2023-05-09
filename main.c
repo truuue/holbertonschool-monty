@@ -23,8 +23,10 @@ int main(int argc, char** argv)
 
 	file = fdopen(fd, "r");
 	while ((nread = getline(&line, &size, file)) != -1)
-		printf("%s\n", line); //fonction dans un autre fichier .c --> char *temp = strdup(line), strtok(temp, " "), strcmp
-
+	{
+		//fonction dans un autre fichier .c --> char *temp = strdup(line), strtok(temp, " "), strcmp
+		copy_and_cut(line);
+	}
 	free(line);
 	close(fd);
 	return (0);
