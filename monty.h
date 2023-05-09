@@ -37,7 +37,7 @@ typedef struct instruction_s
         void (*f)(monty_stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void copy_and_cut(char *line, int line_nb);
+void copy_and_cut(char *line, int line_nb, monty_stack_t **stack);
 void (*get_ops(char *token))(monty_stack_t **stack, unsigned int number);
 void push (monty_stack_t **stack, unsigned int number);
 void pall(monty_stack_t **stack, unsigned int number);
