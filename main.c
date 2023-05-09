@@ -2,12 +2,12 @@
 
 int main(int argc, char** argv)
 {
-	int fd;
-	int line_nb = 0;
+	int fd, line_nb = 0;
 	char *line = NULL;
 	size_t size = 0;
     	ssize_t nread;
 	FILE *file = NULL;
+	monty_stack_t *head = NULL;
 
 	if (argc != 2)
 	{
@@ -26,7 +26,7 @@ int main(int argc, char** argv)
 	while ((nread = getline(&line, &size, file)) != -1)
 	{
 		line_nb++;
-		copy_and_cut(line, line_nb);
+		copy_and_cut(line, line_nb, &head);
 	}
 		
 	free(line);
