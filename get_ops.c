@@ -12,7 +12,7 @@ void (*get_ops(char *token))(monty_stack_t **, unsigned int)
 	{
 		if (strcmp(opcode_func[i].opcode, token) == 0)
 			return (opcode_func[i].f);
-		i++;
+		i++;	
 	}
 	return (NULL);
 }

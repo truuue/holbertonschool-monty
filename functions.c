@@ -23,11 +23,26 @@ void pall(monty_stack_t **stack, unsigned int number)
 	if (stack == NULL)
 	{
 		printf("Stack is empty\n");
-		return;
+		exit(EXIT_FAILURE);
 	}
 
 	for (i = *stack; i != NULL; i = i->next)
 	{
 		printf("%d\n", i->n);
 	}
+}
+
+void free_stack(monty_stack_t **stack)
+{
+	monty_stack_t *current = *stack;
+	monty_stack_t *next;
+
+	while (current != NULL)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+
+	*stack = NULL;
 }

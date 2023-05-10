@@ -14,7 +14,6 @@ void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 		line_cpy = strdup(line);
 		cmd = strtok(line_cpy, separators);
 		argument = strtok(NULL, separators);
-
 		if (argument != NULL)
 			number = atoi(argument);
 
@@ -22,13 +21,17 @@ void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 
 		if (op_func == 0)
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", line_nb, cmd);
+			fprintf(stderr, "L%d: unknown instruction %s", line_nb, cmd);
+			free(line_cpy);
+			free_stack(stack);
+			free(line);
 			exit(EXIT_FAILURE);
 		}
 		else
 			op_func(stack, number);
 
 	}
+	free(line_cpy);
 
 	return;
 }

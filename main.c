@@ -19,6 +19,7 @@ int main(int argc, char** argv)
 	if (fd == -1)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		close(fd);
 		exit(EXIT_FAILURE);
 	}
 
@@ -27,9 +28,13 @@ int main(int argc, char** argv)
 	{
 		line_nb++;
 		copy_and_cut(line, line_nb, &head);
+		free(line);
+		line = NULL;
 	}
 		
 	free(line);
 	close(fd);
+	fclose(file);
+	free_stack(&head);
 	return (0);
 }
