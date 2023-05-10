@@ -23,7 +23,7 @@ void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 
 		if (op_func == NULL)
 		{
-			fprintf(stderr, "L%d: unknown instruction %s", line_nb, cmd);
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_nb, cmd);
 			free(line_cpy);
 			global_status = (EXIT_FAILURE);
 			return;
