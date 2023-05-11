@@ -2,12 +2,13 @@
 
 int main(int argc, char** argv)
 {
-	int fd, line_nb = 0, global_status = 0;
+	int fd, line_nb = 0;
 	char *line = NULL;
 	size_t size = 0;
     	ssize_t nread;
 	FILE *file = NULL;
 	monty_stack_t *head = NULL;
+	global_status = 0;
 
 	if (argc != 2)
 	{
