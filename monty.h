@@ -52,5 +52,6 @@ int check_digit(char *cmd, char *argument, unsigned int line_nb,
 char *line_cpy);
 void pint(monty_stack_t **stack, unsigned int line_nb);
 void pop(monty_stack_t **stack, unsigned int line_nb);
+void nop(monty_stack_t **stack, unsigned int line_nb);
 
 #endif
