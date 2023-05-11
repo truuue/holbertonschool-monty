@@ -20,7 +20,7 @@ void swap(monty_stack_t **stack, unsigned int line_nb)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_nb);
 		free_stack(stack);
-		global_status = (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	k = temp->n;
 	temp->n = temp->next->n;
