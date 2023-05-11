@@ -25,7 +25,7 @@ void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 		{
 			for (i = 0; argument[i] != '\0'; i++)
 			{
-				if ((check_digit = _isdigit(argument[i])) == 0)
+				if ((check_digit = _isdigit(argument[i]) == 0))
 				{
 					fprintf(stderr, "L%d: usage: %s integer\n", line_nb, cmd);
 					free(line_cpy);
