@@ -13,6 +13,7 @@ void (*get_ops(char *token))(monty_stack_t **, unsigned int)
 	instruction_t opcode_func[] = {
 	    {"push", push},
 	    {"pall", pall},
+	    {"pint", pint},
 	    {NULL, NULL}};
 
 	while (opcode_func[i].opcode != NULL)
