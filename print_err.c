@@ -20,7 +20,7 @@ void print_err(char *msg)
  *
  * Closes the program with a failure status using exit
  */
-void print_err2(int line_nb, char *cmd, char *line_cpy)
+void print_err2(unsigned int line_nb, char *cmd, char *line_cpy)
 {
 	fprintf(stderr, "L%d: usage: %s integer\n", line_nb, cmd);
 	free(line_cpy);
