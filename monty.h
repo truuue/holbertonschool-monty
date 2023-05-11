@@ -18,9 +18,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } monty_stack_t;
 
 /**
@@ -33,15 +33,15 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(monty_stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(monty_stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 int global_status;
 
 void copy_and_cut(char *line, int line_nb, monty_stack_t **stack);
 void (*get_ops(char *token))(monty_stack_t **stack, unsigned int number);
-void push (monty_stack_t **stack, unsigned int number);
+void push(monty_stack_t **stack, unsigned int number);
 void pall(monty_stack_t **stack, unsigned int number);
 void free_stack(monty_stack_t **stack);
 int _isdigit(int c);
