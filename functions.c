@@ -66,10 +66,14 @@ void free_stack(monty_stack_t **stack)
 	}
 }
 
-void pint(monty_stack_t **stack, unsigned int number)
+void pint(monty_stack_t **stack, unsigned int line_nb)
 {
-	(void)number;
 	if (*stack != NULL)
 		printf("%d\n", (*stack)->n);
-	//print erreur....
+	else
+	{
+		fprintf(stderr, "L%d : can't pint, stack empty\n", line_nb);
+		global_status = (EXIT_FAILURE);
+		return;
+	}
 }
