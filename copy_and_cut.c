@@ -7,11 +7,10 @@
  */
 void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 {
-	char *line_cpy = NULL, *cmd = NULL, *argument = NULL; //*push = "push";
+	char *line_cpy = NULL, *cmd = NULL, *argument = NULL;
 	int number = 0;
 	const char *separators = " $\n";
 	void (*op_func)(monty_stack_t **, unsigned int) = NULL;
-	//int i, check_digit;
 	int flag;
 
 	if (line != NULL)
@@ -24,35 +23,11 @@ void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 		}
 		cmd = strtok(line_cpy, separators);
 		argument = strtok(NULL, separators);
-		// if (cmd == NULL && argument == NULL)
-		// {
-		// 	free(line_cpy);
-		// 	return;
-		// }
 		flag = check_digit(cmd, argument, line_nb, line_cpy);
 		if (flag == 1)
 			return;
-
 		if (argument != NULL)
 			number = atoi(argument);
-		// if ((strcmp(cmd, push) == 0) && argument == NULL)
-		// {
-		// 	print_err2(line_nb, cmd, line_cpy);
-		// 	return;
-		// }
-		// else if ((strcmp(cmd, push) == 0) && argument != NULL)
-		// {
-		// 	for (i = 0; argument[i] != '\0'; i++)
-		// 	{
-		// 		check_digit = _isdigit(argument[i]);
-		// 		if (check_digit == 0)
-		// 		{
-		// 			print_err2(line_nb, cmd, line_cpy);
-		// 			return;
-		// 		}
-		// 	}
-		// 	number = atoi(argument);
-		// }
 		op_func = get_ops(cmd);
 		if (op_func == NULL)
 		{
@@ -65,5 +40,4 @@ void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 			op_func(stack, number);
 	}
 	free(line_cpy);
-	return;
 }
