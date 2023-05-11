@@ -24,6 +24,12 @@ int main(int argc, char** argv)
 	}
 
 	file = fdopen(fd, "r");
+	if(file == NULL)
+	{
+		close(fd);
+		exit(EXIT_FAILURE);
+	}
+
 	while ((nread = getline(&line, &size, file)) != -1)
 	{
 		
