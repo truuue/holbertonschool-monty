@@ -5,7 +5,4 @@
  * @stack: the stack with data
  * @line_nb: the line number with the command
  */
-void nop(monty_stack_t **stack, unsigned int line_nb)
-{
-	return;
-}
+void nop(monty_stack_t **stack, unsigned int line_nb) {}
