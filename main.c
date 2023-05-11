@@ -13,7 +13,8 @@
  */
 int main(int argc, char **argv)
 {
-	int fd, line_nb = 0;
+	int fd;
+	unsigned int line_nb = 0;
 	char *line = NULL;
 	size_t size = 0;
 	ssize_t nread;
