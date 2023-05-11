@@ -31,7 +31,6 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-
 	file = fdopen(fd, "r");
 	if (file == NULL)
 	{

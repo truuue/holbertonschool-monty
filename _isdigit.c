@@ -26,7 +26,7 @@ int _isdigit(int c)
  * with the line number, command, and line copy, then return 1
  * if none of the above conditions are met, the function returns 0
  */
-int check_digit(char *cmd, char *argument, unsigned int line_nb, 
+int check_digit(char *cmd, char *argument, unsigned int line_nb,
 char *line_cpy)
 {
 	char *push = "push";

@@ -66,6 +66,12 @@ void free_stack(monty_stack_t **stack)
 	}
 }
 
+/**
+ * pint - This function prints the value at the top of the stack,
+ * followed by a new line
+ * @stack: the stack with data
+ * @line_nb: the line number with the command
+ */
 void pint(monty_stack_t **stack, unsigned int line_nb)
 {
 	if (*stack != NULL)
