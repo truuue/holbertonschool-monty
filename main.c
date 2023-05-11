@@ -2,13 +2,12 @@
 
 int main(int argc, char** argv)
 {
-	int fd, line_nb = 0;
+	int fd, line_nb = 0, global_status = 0;
 	char *line = NULL;
 	size_t size = 0;
     	ssize_t nread;
 	FILE *file = NULL;
 	monty_stack_t *head = NULL;
-	global_status = 0;
 
 	if (argc != 2)
 	{
@@ -31,24 +30,25 @@ int main(int argc, char** argv)
 	}
 
 	while ((nread = getline(&line, &size, file)) != -1)
-	{
-		
+	{	
 		line_nb++;
 		copy_and_cut(line, line_nb, &head);
 		free(line);
 		line = NULL;
 		if (global_status != 0)
 			{
-				close(fd);
-				fclose(file);
-				free_stack(&head);
+				close_free(NULL, fd, file, head);
+				// close(fd);
+				// fclose(file);
+				// free_stack(&head);
 				exit(EXIT_FAILURE);
 			}
 	}
-	free(line);
-	close(fd);
-	fclose(file);
-	free_stack(&head);
+	close_free(line, fd, file, head);
+	// free(line);
+	// close(fd);
+	// fclose(file);
+	// free_stack(&head);
 	if (global_status != 0)
 		exit(EXIT_FAILURE);
 	return (0);
