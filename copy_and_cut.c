@@ -10,6 +10,7 @@ void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 	void (*op_func)(monty_stack_t **, unsigned int) = NULL;
 	int i, check_digit;
 	char *push = "push";
+	// char *pall = "pall";
 
 	if (line != NULL)
 	{
@@ -22,6 +23,8 @@ void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 			return;
 		}
 
+		// if ((strcmp(cmd, pall) == 0) && argument != NULL)
+
 		if ((strcmp(cmd, push) == 0) && argument == NULL)
 		{
 			fprintf(stderr, "L%d: usage: %s integer\n", line_nb, cmd);
@@ -29,8 +32,7 @@ void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 			global_status = (EXIT_FAILURE);
 			return;
 		}
-
-		if (argument != NULL)
+		else if ((strcmp(cmd, push) == 0) && argument != NULL)
 		{
 			for (i = 0; argument[i] != '\0'; i++)
 			{
@@ -44,7 +46,7 @@ void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 			}
 			number = atoi(argument);
 		}
-
+			
 		op_func = get_ops(cmd);
 
 		if (op_func == NULL)
