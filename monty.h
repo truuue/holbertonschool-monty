@@ -39,7 +39,7 @@ typedef struct instruction_s
 
 int global_status;
 
-void copy_and_cut(char *line, int line_nb, monty_stack_t **stack);
+void copy_and_cut(char *line, unsigned int line_nb, monty_stack_t **stack);
 void (*get_ops(char *token))(monty_stack_t **stack, unsigned int number);
 void push(monty_stack_t **stack, unsigned int number);
 void pall(monty_stack_t **stack, unsigned int number);
@@ -47,8 +47,8 @@ void free_stack(monty_stack_t **stack);
 int _isdigit(int c);
 void close_free(char *line, int fd, FILE *file, monty_stack_t *head);
 void print_err(char *msg);
-void print_err2(int line_nb, char *cmd, char *line_cpy);
-int check_digit(char *cmd, char *argument, int line_nb, char *line_cpy);
-void pint(monty_stack_t **stack, unsigned int number);
+void print_err2(unsigned int line_nb, char *cmd, char *line_cpy);
+int check_digit(char *cmd, char *argument, unsigned int line_nb, char *line_cpy);
+void pint(monty_stack_t **stack, unsigned int line_nb);
 
 #endif
