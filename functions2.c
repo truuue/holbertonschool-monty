@@ -43,7 +43,7 @@ void add(monty_stack_t **stack, unsigned int line_nb)
 
 	if (!*stack || !(*stack)->next)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", line_nb);
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_nb);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
