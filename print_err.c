@@ -1,6 +1,6 @@
 #include "monty.h"
 
-/*
+/**
  * print_err - function that takes a pointer to a char msg as input
  * @msg: print the standard error stream using fprintf
  *
