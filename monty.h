@@ -48,5 +48,6 @@ int _isdigit(int c);
 void close_free(char *line, int fd, FILE *file, monty_stack_t *head);
 void print_err(char *msg);
 void print_err2(int line_nb, char *cmd, char *line_cpy);
+int check_digit(char *cmd, char *argument, int line_nb, char *line_cpy);
 
 #endif
