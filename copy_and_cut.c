@@ -7,14 +7,11 @@
  */
 void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 {
-	char *line_cpy = NULL;
-	char *cmd = NULL;
-	char *argument = NULL;
+	char *line_cpy = NULL, *cmd = NULL, *argument = NULL, *push = "push";
 	unsigned int number = 0;
 	const char *separators = " $\n";
 	void (*op_func)(monty_stack_t **, unsigned int) = NULL;
 	int i, check_digit;
-	char *push = "push";
 
 	if (line != NULL)
 	{
@@ -34,9 +31,10 @@ void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 
 		if ((strcmp(cmd, push) == 0) && argument == NULL)
 		{
-			fprintf(stderr, "L%d: usage: %s integer\n", line_nb, cmd);
-			free(line_cpy);
-			global_status = (EXIT_FAILURE);
+			// fprintf(stderr, "L%d: usage: %s integer\n", line_nb, cmd);
+			// free(line_cpy);
+			// global_status = (EXIT_FAILURE);
+			print_err2(line_nb, cmd, line_cpy);
 			return;
 		}
 		else if ((strcmp(cmd, push) == 0) && argument != NULL)
@@ -46,9 +44,10 @@ void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 				check_digit = _isdigit(argument[i]);
 				if (check_digit == 0)
 				{
-					fprintf(stderr, "L%d: usage: %s integer\n", line_nb, cmd);
-					free(line_cpy);
-					global_status = (EXIT_FAILURE);
+					// fprintf(stderr, "L%d: usage: %s integer\n", line_nb, cmd);
+					// free(line_cpy);
+					// global_status = (EXIT_FAILURE);
+					print_err2(line_nb, cmd, line_cpy);
 					return;
 				}
 			}
