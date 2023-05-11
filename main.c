@@ -20,7 +20,6 @@ int main(int argc, char** argv)
 	if (fd == -1)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		close(fd);
 		exit(EXIT_FAILURE);
 	}
 
@@ -41,13 +40,10 @@ int main(int argc, char** argv)
 			}
 	}
 		
-	free(line);
 	close(fd);
 	fclose(file);
 	free_stack(&head);
 	if (global_status != 0)
-	{
 		exit(EXIT_FAILURE);
-	}
 	return (0);
 }
