@@ -1,8 +1,9 @@
 #include "monty.h"
 /**
- * copy_and_cut - This function copy the input and separate the string
+ * copy_and_cut - This function finds the command and its argument in
+ * the line
  * @line: the original line
- * @line_nb: the counter of lines reads
+ * @line_nb: the number of the line containing the command
  * @stack: the stack we need to fill
  */
 void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)

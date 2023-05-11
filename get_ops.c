@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * get_ops - returns the function pointer of the corresponding opcode
+ * get_ops - function that search a valid opcode
  * @token: the opcode to search for
  *
  * Return: pointer to the function corresponding to the opcode,

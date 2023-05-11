@@ -1,10 +1,10 @@
 #include "monty.h"
 
 /**
- * print_err - function that takes a pointer to a char msg as input
+ * print_err - function that prints an error message and exits
  * @msg: print the standard error stream using fprintf
  *
- * close the program with a failure status using exit
+ * Closes the program with a failure status using exit
  */
 void print_err(char *msg)
 {
@@ -12,6 +12,14 @@ void print_err(char *msg)
 	exit(EXIT_FAILURE);
 }
 
+/**
+ * print_err2 - function that prints an error message, free line copy and exits
+ * @line_nb: the number of the line with error
+ * @cmd: the string line with the command
+ * @line_cpy: the string with the copy of the line
+ *
+ * Closes the program with a failure status using exit
+ */
 void print_err2(int line_nb, char *cmd, char *line_cpy)
 {
 	fprintf(stderr, "L%d: usage: %s integer\n", line_nb, cmd);

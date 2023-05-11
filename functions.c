@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * push - This function create a node with the int given in parameter
+ * push - This function creates a node with the int given in parameter
  * @stack: the stack we need to fill
  * @number: the int/data to fill in the node
  */
@@ -23,9 +23,9 @@ void push(monty_stack_t **stack, unsigned int number)
 }
 
 /**
- * pall - This function print the data
- * @stack: the stack we need to fill
- * @number: the int/data to fill in the node
+ * pall - This function print all the data in the stack
+ * @stack: the stack containing data
+ * @number: unused here
  */
 void pall(monty_stack_t **stack, unsigned int number)
 {
@@ -46,7 +46,7 @@ void pall(monty_stack_t **stack, unsigned int number)
 }
 
 /**
- * free_stack - This function free the node
+ * free_stack - This function frees the stack
  * @stack: the stack we need to free
  */
 void free_stack(monty_stack_t **stack)

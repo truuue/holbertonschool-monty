@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _isdigit - a function that checks for for a digit (0 through 9).
+ * _isdigit - a function that checks if a char is a digit (0 through 9)
  * @c: a character to check
  *
  * Return: 1 if c is a digit, 0 otherwise
