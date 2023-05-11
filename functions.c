@@ -6,7 +6,7 @@ void push(monty_stack_t **stack, unsigned int number)
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		return;
+		exit(EXIT_FAILURE);
 	}
 
 	new_node->n = number;
