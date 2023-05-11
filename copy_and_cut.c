@@ -17,11 +17,11 @@ void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 	if (line != NULL)
 	{
 		line_cpy = strdup(line);
-		if (line_cpy == NULL)
-		{
-			global_status = EXIT_FAILURE;
-			return;
-		}
+		// if (line_cpy == NULL)
+		// {
+		// 	global_status = EXIT_FAILURE;
+		// 	return;
+		// }
 		cmd = strtok(line_cpy, separators);
 		argument = strtok(NULL, separators);
 		flag = check_digit(cmd, argument, line_nb, line_cpy);
