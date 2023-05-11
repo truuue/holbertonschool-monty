@@ -9,6 +9,7 @@ void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 	const char *separators = " $\n";
 	void (*op_func)(monty_stack_t **, unsigned int) = NULL;
 	int i, check_digit;
+	char *push = "push";
 
 	if (line != NULL)
 	{
@@ -18,6 +19,14 @@ void copy_and_cut(char *line, int line_nb, monty_stack_t **stack)
 		if (cmd == NULL && argument == NULL)
 		{
 			free(line_cpy);
+			return;
+		}
+
+		if ((strcmp(cmd, push) == 0) && argument == NULL)
+		{
+			fprintf(stderr, "L%d: usage: %s integer\n", line_nb, cmd);
+			free(line_cpy);
+			global_status = (EXIT_FAILURE);
 			return;
 		}
 
