@@ -1,8 +1,14 @@
 #include "monty.h"
 
+/**
+ * push - This function create a node with the int given in parameter
+ * @stack: the stack we need to fill
+ * @number: the int/data to fill in the node
+ */
 void push(monty_stack_t **stack, unsigned int number)
 {
 	monty_stack_t *new_node = malloc(sizeof(monty_stack_t));
+
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -16,6 +22,11 @@ void push(monty_stack_t **stack, unsigned int number)
 	*stack = new_node;
 }
 
+/**
+ * pall - This function print the data
+ * @stack: the stack we need to fill
+ * @number: the int/data to fill in the node
+ */
 void pall(monty_stack_t **stack, unsigned int number)
 {
 	monty_stack_t *i = NULL;
@@ -34,12 +45,16 @@ void pall(monty_stack_t **stack, unsigned int number)
 	}
 }
 
+/**
+ * free_stack - This function free the node
+ * @stack: the stack we need to free
+ */
 void free_stack(monty_stack_t **stack)
 {
 	monty_stack_t *current = *stack;
 	monty_stack_t *next;
 
-	if(*stack != NULL)
+	if (*stack != NULL)
 	{
 		while (current != NULL)
 		{
