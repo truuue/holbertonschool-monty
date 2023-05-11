@@ -44,4 +44,6 @@ void (*get_ops(char *token))(monty_stack_t **stack, unsigned int number);
 void push (monty_stack_t **stack, unsigned int number);
 void pall(monty_stack_t **stack, unsigned int number);
 void free_stack(monty_stack_t **stack);
+int _isdigit(int c);
+
 #endif
