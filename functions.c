@@ -78,7 +78,7 @@ void pint(monty_stack_t **stack, unsigned int line_nb)
 		printf("%d\n", (*stack)->n);
 	else
 	{
-		fprintf(stderr, "L%d : can't pint, stack empty\n", line_nb);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_nb);
 		global_status = (EXIT_FAILURE);
 		return;
 	}
