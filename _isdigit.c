@@ -14,6 +14,18 @@ int _isdigit(int c)
 		return (0);
 }
 
+/**
+ * check_digit - function that checks that there is an argument
+ * and that the argument is a digit
+ * @cmd: is compared to the string "push" to see if the command is a push
+ * @argument: represents the argument associated with the cmd
+ * line_nb: used to print err messages in case there is issue with instruction
+ * line_cpy: is used for cpy the line variable
+ *
+ * Return: if a character is not a digit the function prints an error message
+ * with the line number, command, and line copy, then return 1
+ * if none of the above conditions are met, the function returns 0
+ */
 int check_digit(char *cmd, char *argument, int line_nb, char *line_cpy)
 {
 	char *push = "push";
