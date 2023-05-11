@@ -83,3 +83,28 @@ void pint(monty_stack_t **stack, unsigned int line_nb)
 		return;
 	}
 }
+
+/**
+ * pop - this function removes the top element of the stack.
+ * @stack: the stack with data
+ * @line_nb: the line number with the command
+ */
+void pop(monty_stack_t **stack, unsigned int line_nb)
+{
+	monty_stack_t *temp = NULL;
+
+	if (*stack != NULL)
+	{
+		temp = *stack;
+		*stack = (*stack)->next;
+		if (*stack != NULL)
+			(*stack)->prev = NULL;
+		free(temp);
+	}
+	else
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_nb);
+		global_status = (EXIT_FAILURE);
+		return;
+	}
+}
