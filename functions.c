@@ -65,3 +65,11 @@ void free_stack(monty_stack_t **stack)
 		*stack = NULL;
 	}
 }
+
+void pint(monty_stack_t **stack, unsigned int number)
+{
+	(void)number;
+	if (*stack != NULL)
+		printf("%d\n", (*stack)->n);
+	//print erreur....
+}
