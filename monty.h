@@ -53,5 +53,6 @@ char *line_cpy);
 void pint(monty_stack_t **stack, unsigned int line_nb);
 void pop(monty_stack_t **stack, unsigned int line_nb);
 void nop(monty_stack_t **stack, unsigned int line_nb);
+void swap(monty_stack_t **stack, unsigned int line_nb);
 
 #endif
