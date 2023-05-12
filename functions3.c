@@ -23,7 +23,7 @@ void mul(monty_stack_t **stack, unsigned int line_nb)
 
 void mod(monty_stack_t **stack, unsigned int line_nb)
 {
-	monty_stack_t *top, *second_top;
+	monty_stack_t *top, *temp;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
@@ -33,7 +33,7 @@ void mod(monty_stack_t **stack, unsigned int line_nb)
 	}
 
 	top = *stack;
-	second_top = top->next;
+	temp = top->next;
 
 	if (top->n == 0)
 	{
@@ -42,7 +42,7 @@ void mod(monty_stack_t **stack, unsigned int line_nb)
                 exit(EXIT_FAILURE);
 	}
 
-	second_top->n %= top->n;
-	*stack = second_top;
+	temp->n %= top->n;
+	*stack = temp;
 	free(top);
 }
