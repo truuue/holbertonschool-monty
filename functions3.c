@@ -22,10 +22,10 @@ void mul(monty_stack_t **stack, unsigned int line_nb)
 }
 
 /**
- * mod - computes the rest of the division of the second top element of the stack
+ * mod - computes the rest of the div of the sec top element of the stack
  * by the top element of the stack.
  * @stack: double pointer to the beginning of the stack
- * @line_number: line number of the opcode
+ * @line_nb: line number of the opcode
  */
 void mod(monty_stack_t **stack, unsigned int line_nb)
 {
