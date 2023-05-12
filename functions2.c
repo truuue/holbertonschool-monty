@@ -74,3 +74,31 @@ void sub(monty_stack_t **stack, unsigned int line_nb)
 	temp->next->n = total;
 	pop(stack, line_nb);
 }
+
+/**
+ * div - This function divides the second top element
+ * of the stack by the top element of the stack.
+ * @stack: the stack with data
+ * @line_nb: the line number with the command
+ */
+void _div(monty_stack_t **stack, unsigned int line_nb)
+{
+        monty_stack_t *temp = *stack;
+
+        if (!*stack || !(*stack)->next)
+        {
+                fprintf(stderr, "L%d: can't div, stack too short\n", line_nb);
+                free_stack(stack);
+                exit(EXIT_FAILURE);
+        }
+
+        if (((*stack)->n) == 0)
+        {
+                fprintf(stderr, "L%d: division by zero\n", line_nb);
+                free_stack(stack);
+                exit(EXIT_FAILURE);
+        }
+
+        temp->next->n = temp->next->n / temp->n;
+        pop(stack, line_nb);
+}

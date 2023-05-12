@@ -56,5 +56,6 @@ void nop(monty_stack_t **stack, unsigned int line_nb);
 void swap(monty_stack_t **stack, unsigned int line_nb);
 void add(monty_stack_t **stack, unsigned int line_nb);
 void sub(monty_stack_t **stack, unsigned int line_nb);
+void _div(monty_stack_t **stack, unsigned int line_nb);
 
 #endif
