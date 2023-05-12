@@ -51,3 +51,26 @@ void add(monty_stack_t **stack, unsigned int line_nb)
 	temp->next->n = total;
 	pop(stack, line_nb);
 }
+
+/**
+ * sub - This function sub the two newest data
+ * @stack: the stack with data
+ * @line_nb: the line number with the command
+ */
+void sub(monty_stack_t **stack, unsigned int line_nb)
+{
+	monty_stack_t *temp = NULL;
+	int total = 0;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_nb);
+		free_stack(stack);
+		exit(EXIT_FAILURE);
+	}
+
+	temp = *stack;
+	total = temp->next->n - temp->n;
+	temp->next->n = total;
+	pop(stack, line_nb);
+}
