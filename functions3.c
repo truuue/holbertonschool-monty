@@ -34,16 +34,16 @@ void mod(monty_stack_t **stack, unsigned int line_nb)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line_nb);
-                free_stack(stack);
-                exit(EXIT_FAILURE);
+		free_stack(stack);
+		exit(EXIT_FAILURE);
 	}
 	top = *stack;
 	temp = top->next;
 	if (top->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_nb);
-                free_stack(stack);
-                exit(EXIT_FAILURE);
+		free_stack(stack);
+		exit(EXIT_FAILURE);
 	}
 	temp->n %= top->n;
 	*stack = temp;
