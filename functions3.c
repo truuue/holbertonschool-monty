@@ -21,6 +21,12 @@ void mul(monty_stack_t **stack, unsigned int line_nb)
 	pop(stack, line_nb);
 }
 
+/**
+ * mod - computes the rest of the division of the second top element of the stack
+ * by the top element of the stack.
+ * @stack: double pointer to the beginning of the stack
+ * @line_number: line number of the opcode
+ */
 void mod(monty_stack_t **stack, unsigned int line_nb)
 {
 	monty_stack_t *top, *temp;
@@ -31,17 +37,14 @@ void mod(monty_stack_t **stack, unsigned int line_nb)
                 free_stack(stack);
                 exit(EXIT_FAILURE);
 	}
-
 	top = *stack;
 	temp = top->next;
-
 	if (top->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_nb);
                 free_stack(stack);
                 exit(EXIT_FAILURE);
 	}
-
 	temp->n %= top->n;
 	*stack = temp;
 	free(top);
