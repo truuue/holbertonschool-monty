@@ -11,11 +11,11 @@ void mul(monty_stack_t **stack, unsigned int line_nb)
 	monty_stack_t *temp = *stack;
 
 	if (!*stack || !(*stack)->next)
-        {
-                fprintf(stderr, "L%d: can't mul, stack too short\n", line_nb);
-                free_stack(stack);
-                exit(EXIT_FAILURE);
-        }
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_nb);
+		free_stack(stack);
+		exit(EXIT_FAILURE);
+	}
 
 	temp->next->n = temp->next->n * temp->n;
 	pop(stack, line_nb);
