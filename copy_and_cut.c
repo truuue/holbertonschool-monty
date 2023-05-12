@@ -18,7 +18,10 @@ void copy_and_cut(char *line, unsigned int line_nb, monty_stack_t **stack)
 	{
 		line_cpy = strdup(line);
 		if (*line_cpy == '#')
+		{
+			free(line_cpy);
 			return;
+		}
 		cmd = strtok(line_cpy, separators);
 		argument = strtok(NULL, separators);
 		flag = check_digit(cmd, argument, line_nb, line_cpy);
