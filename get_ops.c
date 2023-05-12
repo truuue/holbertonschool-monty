@@ -30,5 +30,7 @@ void (*get_ops(char *token))(monty_stack_t **, unsigned int)
 			return (opcode_func[i].f);
 		i++;
 	}
+	if (token[0] == '#')
+		return (NULL);
 	return (NULL);
 }
