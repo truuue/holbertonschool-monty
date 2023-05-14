@@ -49,3 +49,29 @@ void mod(monty_stack_t **stack, unsigned int line_nb)
 	*stack = temp;
 	free(top);
 }
+
+/**
+ * pchar - prints the ascii value of the integer at the top of the stack
+ * @stack: double pointer to the beginning of the stack
+ * @line_number: line number of the opcode
+ * Return: void
+ */
+void pchar(monty_stack_t **stack, unsigned int line_number)
+{
+	int value;
+
+	if (*stack == NULL)
+	{
+		print_err2(line_number, "pchar", NULL);
+		return;
+	}
+
+	value = (*stack)->n;
+	if (value < 0 || value > 127)
+	{
+		print_err2(line_number, "pchar", NULL);
+		return;
+	}
+	printf("%c\n", value);
+}
+
