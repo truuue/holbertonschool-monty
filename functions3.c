@@ -62,14 +62,16 @@ void pchar(monty_stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || stack == NULL)
 	{
-		print_err2(line_number, "can't pchar, stack empty", NULL);
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+		global_status = EXIT_FAILURE;
 		return;
 	}
 
 	value = (*stack)->n;
 	if (value < 0 || value > 127)
 	{
-		print_err2(line_number, "can't pchar, value out of range", NULL);
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+		global_status = EXIT_FAILURE;
 		return;
 	}
 	printf("%c\n", value);
