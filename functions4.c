@@ -7,7 +7,7 @@
  */
 void rotr(monty_stack_t **stack, unsigned int line_nb)
 {
-	monty_stack_t *temp = *stack;
+	monty_stack_t *temp;
     (void)line_nb;
 
     temp = *stack;
