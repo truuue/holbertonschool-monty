@@ -25,6 +25,7 @@ void (*get_ops(char *token))(monty_stack_t **, unsigned int)
 	    {"#", nop},
 		{"pchar", pchar},
 		{"pstr", pstr},
+		{"rotl", rotl},
 	    {NULL, NULL}};
 
 	while (opcode_func[i].opcode != NULL)
