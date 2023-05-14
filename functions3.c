@@ -77,3 +77,25 @@ void pchar(monty_stack_t **stack, unsigned int line_number)
 	printf("%c\n", value);
 }
 
+/**
+ * pstr - prints the string starting at the top of the stack
+ * @stack: double pointer to the beginning of the stack
+ * @line_nb: current line number in the Monty file
+ */
+void pstr(monty_stack_t **stack, unsigned int line_nb)
+{
+	monty_stack_t *temp = *stack;
+	int value;
+	(void)line_nb;
+
+	while (temp && temp->n != 0)
+	{
+		value = temp->n;
+		if (value < 0 || value > 127)
+			break;
+
+		printf("%c", value);
+		temp = temp->next;
+	}
+	printf("\n");
+}
