@@ -60,16 +60,16 @@ void pchar(monty_stack_t **stack, unsigned int line_number)
 {
 	int value;
 
-	if (*stack == NULL)
+	if (*stack == NULL || stack == NULL)
 	{
-		print_err2(line_number, "pchar", NULL);
+		print_err2(line_number, "can't pchar, stack empty", NULL);
 		return;
 	}
 
 	value = (*stack)->n;
 	if (value < 0 || value > 127)
 	{
-		print_err2(line_number, "pchar", NULL);
+		print_err2(line_number, "can't pchar, value out of range", NULL);
 		return;
 	}
 	printf("%c\n", value);
