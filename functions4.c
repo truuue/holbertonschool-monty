@@ -8,7 +8,7 @@
 void rotr(monty_stack_t **stack, unsigned int line_nb)
 {
 	monty_stack_t *last = NULL, *second_last = NULL;
-    (void)line_nb;
+	(void)line_nb;
 
 	if (!*stack || !(*stack)->next)
 		return;
