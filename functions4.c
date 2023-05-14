@@ -11,7 +11,7 @@ void rotr(monty_stack_t **stack, unsigned int line_nb)
     (void)line_nb;
 
     temp = *stack;
-	if (temp == NULL || temp->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 		return;
 
 	while (temp->next)
