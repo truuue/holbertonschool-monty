@@ -10,6 +10,7 @@ void rotr(monty_stack_t **stack, unsigned int line_nb)
 	monty_stack_t *temp = *stack;
     (void)line_nb;
 
+    temp = *stack;
 	if (temp == NULL || temp->next == NULL)
 		return;
 
