@@ -7,19 +7,19 @@
  */
 void rotr(monty_stack_t **stack, unsigned int line_nb)
 {
-	monty_stack_t *temp;
+    monty_stack_t *temp = NULL;
     (void)line_nb;
 
     temp = *stack;
-	if (*stack == NULL || (*stack)->next == NULL)
-		return;
+    if (*stack == NULL || (*stack)->next == NULL)
+        return;
 
-	while (temp->next)
-		temp = temp->next;
+    while (temp->next)
+        temp = temp->next;
 
     temp->next = *stack;
-	(*stack)->prev = temp;
-	temp->prev->next = NULL;
-	temp->prev = NULL;
-	*stack = temp;
+    (*stack)->prev = temp;
+    temp->prev->next = NULL;
+    temp->prev = NULL;
+    *stack = temp;
 }
