@@ -16,9 +16,9 @@ void rotr(monty_stack_t **stack, unsigned int line_nb)
 	while (temp->next)
 		temp = temp->next;
 
+    temp->next = *stack;
+	(*stack)->prev = temp;
 	temp->prev->next = NULL;
 	temp->prev = NULL;
-	temp->next = *stack;
-	(*stack)->prev = temp;
 	*stack = temp;
 }
